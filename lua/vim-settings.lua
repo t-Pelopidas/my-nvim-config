@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-function, unused-local
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
@@ -8,9 +9,11 @@ vim.cmd("set mouse=")
 
 vim.g.mapleader = " "
 
---Better w/q--
+--Better writing/quitting--
 vim.keymap.set("n", "<leader>w", ":write<CR>")
-vim.keymap.set("n", "<leader>al", ":qa<CR>")
+vim.keymap.set("n", "<leader>al", ":wqa<CR>")
+vim.keymap.set("n","<leader>as",":qa!<CR>")
+--vim.keymap.set("n", "<leader>", ":wqa<CR>")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -31,6 +34,7 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.showmatch = true
+vim.opt.winborder = "rounded"
 
 --Better indenting--
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
