@@ -25,7 +25,7 @@ local function set_insert_keys()
     vim.keymap.set("i", "<C-j>", "<C-o>o", {desc = "Open new line below"})
     vim.keymap.set("i", "<C-k>", "<C-o>O", {desc = "Open new line above"})
 end
-
+--
 -- 1. Apply immediately on startup
 set_insert_keys()
 
