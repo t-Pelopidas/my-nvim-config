@@ -6,6 +6,24 @@ vim.cmd("set ruler")
 vim.cmd("set cindent")
 vim.cmd("set mouse=")
 
+vim.pack.add{
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
+}
+
+
+local clangd_opts = {}
+
+vim.lsp.config['clangd'] = {
+
+    cmd = {'clangd'},
+
+    filetypes = {'c', 'cpp'},
+
+}
+if not vim.lsp.is_enabled('clangd') then 
+	vim.lsp.enable('clangd', clangd_opts)
+end
+
 vim.g.mapleader = " "
 
 --Better writing/quitting/sourcing--
@@ -34,10 +52,7 @@ set_insert_keys()
 vim.api.nvim_create_autocmd({"BufEnter", "InsertEnter"}, {
     group = vim.api.nvim_create_augroup("ForceInsertKeys", { clear = true }),
     callback = set_insert_keys,
-})
-
-
-
+})
 
 vim.wo.number = true
 
