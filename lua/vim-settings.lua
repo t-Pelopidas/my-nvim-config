@@ -26,11 +26,13 @@ end
 
 vim.g.mapleader = " "
 
---Better writing/quitting/sourcing--
+--writing--
 vim.keymap.set("n", "<leader>w", ":write<CR>")
-vim.keymap.set("n", "<leader>,", ":q<CR>")
 vim.keymap.set("n", "<leader>al", ":wqa<CR>")
-vim.keymap.set("n","<leader>as",":qa!<CR>")
+--quitting--
+vim.keymap.set("n", "<leader>,", ":q<CR>")
+vim.keymap.set("n","<leader>qa",":qa!<CR>")
+--sourcing--
 vim.keymap.set("n", "<leader>so", ":source<CR>")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -110,6 +112,8 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase w
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sl", "<C-w>l")
 vim.keymap.set("n", "<leader>sh", "<C-w>h")
+vim.keymap.set("n", "<leader>sj", "<C-w>j")
+vim.keymap.set("n", "<leader>sk", "<C-w>k")
 
 
 --Tabs--

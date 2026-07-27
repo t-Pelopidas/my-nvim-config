@@ -30,7 +30,6 @@ return {
     "mfussenegger/nvim-jdtls",
     ft = { "java" },
     config = function()
-      -- CRITICAL FIX: jdtls must be attached via an autocommand for Java files only
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "java",
         callback = function()
@@ -44,4 +43,5 @@ return {
       })
     end,
   },
+
 }
