@@ -6,6 +6,39 @@ vim.cmd("set ruler")
 vim.cmd("set cindent")
 vim.cmd("set mouse=")
 
+
+-----options-----
+
+--Terminal
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.cursorline = true
+vim.opt.wrap = false
+
+--Visual--
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.showmatch = true
+vim.opt.winborder = "rounded"
+vim.opt.selection = "inclusive"
+
+--Search--
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+--Files---
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
+vim.opt.swapfile = false
+
+--Misc--
+vim.opt.encoding = "UTF-8"
+
 vim.pack.add{
   { src = 'https://github.com/neovim/nvim-lspconfig' },
 }
@@ -58,38 +91,11 @@ vim.api.nvim_create_autocmd({"BufEnter", "InsertEnter"}, {
 
 vim.wo.number = true
 
---Terminal
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 8
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.cursorline = true
-vim.opt.wrap = false
-
---Visual--
-vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
-vim.opt.showmatch = true
-vim.opt.winborder = "rounded"
 
 --Better indenting--
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
---Search--
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
---Files---
-vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
-vim.opt.swapfile = false
-
---Misc--
-vim.opt.encoding = "UTF-8"
 vim.keymap.set("n", "<Leader>zm", ":ZenMode<CR>", { desc = "Activate/Disable ZenMode" })
 
 -- Move lines up/down
@@ -110,6 +116,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase w
 
 --vim.keymap.set("n", "<leader>s", ":split<CR>", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sm", ":split<CR>", {desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>sl", "<C-w>l")
 vim.keymap.set("n", "<leader>sh", "<C-w>h")
 vim.keymap.set("n", "<leader>sj", "<C-w>j")
